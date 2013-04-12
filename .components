@@ -1,0 +1,9 @@
+---
+:orm: none
+:test: rspec
+:mock: none
+:script: none
+:renderer: haml
+:stylesheet: scss
+:namespace: OnePageSites
+:migration_format: number
