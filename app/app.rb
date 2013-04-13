@@ -9,6 +9,7 @@ module OnePageSites
     enable :sessions
 
     set :root, File.dirname(__FILE__)
+    # set :slim, layout: :"layouts/application"
 
     ##
     # Sass/Compass

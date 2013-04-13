@@ -38,6 +38,6 @@ gem 'boarding_pass'
 
 # Project requirements
 gem 'rake'
-gem 'haml'
+gem 'slim'
 gem 'pry'
 gem 'newrelic_rpm'
