@@ -4,9 +4,50 @@ module OnePageSites
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
-    register Padrino::Sprockets
+    register Sinatra::AssetPack
 
     enable :sessions
+
+    set :root, File.dirname(__FILE__)
+
+    ##
+    # Sass/Compass
+    #
+    Compass.configuration do |config|
+      config.images_dir = 'images'
+      # config.sass_dir   = 'stylesheets'
+      config.fonts_dir   = 'fonts'
+    end
+    set :sass, Compass.sass_engine_options
+    set :sass, { load_paths: sass[:load_paths] + [ "#{root}/assets/stylesheets" ] }
+    # set :sass, { load_paths: [ "#{root}/assets/stylesheets" ] }
+    set :scss, sass
+
+    ##
+    # Assets
+    #
+    assets do
+      serve '/javascripts', from: 'assets/javascripts' # Optional
+      serve '/stylesheets', from: 'assets/stylesheets' # Optional
+      serve '/images',      from: 'assets/images'      # Optional
+      serve '/fonts',       from: 'assets/fonts'       # Optional
+
+      js :application, [
+        '/javascripts/vendor/jquery-1.9.1.min.js',
+        '/javascripts/components/**/*.js'
+        # '/javascripts/vendor/**/*.js',
+        # '/javascripts/app/**/*.js'
+      ]
+      js :html5,     ['/javascripts/polyfills/html5shim.js']
+      js :polyfills, ['/javascripts/polyfills/selectivizr.js']
+
+      css :application, [
+        '/stylesheets/application.css'
+      ]
+
+      js_compression  :yui, munge: true
+      css_compression :sass
+    end
 
     ##
     # Caching support

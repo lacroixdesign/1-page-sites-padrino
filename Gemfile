@@ -18,10 +18,6 @@ group :production do
 end
 
 group :development do
-  gem 'uglifier'
-  gem 'yui-compressor'
-  gem 'coffee-script'
-  gem 'pry'
   gem 'puma'
 end
 
@@ -32,9 +28,12 @@ group :test do
 end
 
 # Assets
-gem 'sprockets-helpers', require: 'sinatra/sprockets-helpers'
-gem 'sprockets-sass', require: 'sprockets-sass'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
+gem 'uglifier'
+gem 'yui-compressor'
+gem 'coffee-script'
 gem 'sass'
+gem 'compass'
 gem 'boarding_pass'
 
 # Project requirements

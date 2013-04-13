@@ -7,8 +7,6 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
 
-require Padrino.root('config/sprockets')
-
 ##
 # ## Enable devel logging
 #
