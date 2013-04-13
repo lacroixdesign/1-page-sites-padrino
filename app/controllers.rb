@@ -1,5 +1,9 @@
 OnePageSites::App.controllers  do
   
+  get :index do
+    render "static/index"
+  end
+
   # get :index, :map => '/foo/bar' do
   #   session[:foo] = 'bar'
   #   render 'index'

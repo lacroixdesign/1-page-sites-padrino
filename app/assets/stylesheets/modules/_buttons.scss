@@ -1,0 +1,7 @@
+.btn-primary {
+  @include btn($green);
+}
+
+.btn-light-grey {
+  @include btn($teal, $white);
+}

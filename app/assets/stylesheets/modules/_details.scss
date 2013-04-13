@@ -1,0 +1,28 @@
+.m-details {
+  background: $teal;
+  padding: 2em 0;
+  
+  .details-rules {
+    ul {
+      margin-left: 0;
+      list-style: none;
+    }
+
+    li {
+      padding-bottom: 0.6875em;
+      border-bottom: 0.0625em dashed $white;
+    }
+
+    li:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  @include media-ie($breakpoint-desktop) {
+    .details-rules {
+      @include span-columns(6);
+    }
+  }
+
+}

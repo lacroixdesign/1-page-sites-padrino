@@ -1,0 +1,14 @@
+@mixin input($bg: $white, $color: $dark-gray) {
+  width: 100%;
+  padding: 0.65em 1em;
+  border: none;
+  border-radius: 4px;
+  background: $bg;
+  color: $dark-gray;
+  font-size: 0.875em;
+  line-height: 1.25;
+
+  &:focus {
+    border: none;
+  }
+}

@@ -1,0 +1,57 @@
+.m-features {
+  padding: 2em 0;
+  margin-top: -12em;
+  color: $dark-gray;
+
+  .features-tagline {
+    margin-top: 12em;
+    margin-bottom: 1em;
+      
+    h5 {
+      margin-bottom: .5em;
+      color: $orange;
+      font-family: $typeface-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.375em;
+    }
+
+    @include media-ie($breakpoint-ipad) {
+      @include span-columns(6);
+      margin-bottom: 0;
+    }
+  }
+  
+  .features-display {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    small { 
+      display: block;  
+      text-align: center;
+      
+      a:hover {
+        color: $orange;
+      }
+      
+      a:active {
+        color: darken($orange, 10%)
+      }
+    }
+
+    @include media-ie($breakpoint-ipad) {
+      @include span-columns(6);
+    }
+  }
+  
+  .features-item {
+    margin-top: 2em;
+
+    @include media-ie($breakpoint-ipad) {
+      @include span-columns(4);
+    }
+  }
+
+}

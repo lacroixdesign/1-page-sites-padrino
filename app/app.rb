@@ -4,6 +4,7 @@ module OnePageSites
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
+    register Padrino::Sprockets
 
     enable :sessions
 

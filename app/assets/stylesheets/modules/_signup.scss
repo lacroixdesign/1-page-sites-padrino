@@ -1,0 +1,29 @@
+.m-signup {
+  padding: 1.5em 0;
+  background: $grey;
+  color: $dark-gray;
+
+  form {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  input[type="email"] {
+    display: inline-block;
+    max-width: 20em;
+    margin-bottom: 0.5em;
+  }
+
+  @include media-ie($breakpoint-desktop) {
+    form {
+      width: 75%;
+    }
+  }
+
+  @include media-ie($breakpoint-large-screen) {
+    form {
+      width: 50%;
+    }
+  }
+
+}

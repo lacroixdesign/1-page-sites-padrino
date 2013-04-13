@@ -1,0 +1,81 @@
+.m-intro {
+  padding-bottom: 4em;
+  background: $dark-gray image-url("cycle-bg.jpg") no-repeat center center;
+  @include background-size(cover);
+  color: $white;
+
+  header {
+    @include clearfix;
+  }
+  
+  .intro-logo {
+    float: left;
+    width: 4em;
+    margin: 0.5em 0 2em 0;
+
+    img {
+      width: 100%;
+    }
+
+    @include media-ie($breakpoint-ipad) {
+      width: 8em;
+      margin-bottom: 12em;
+    }
+
+  }
+
+  .intro-social {
+    @include unstyled-list;
+    float: right;
+    margin: 0.5em 0;
+    font-size: 1em;
+
+    li {
+      display: inline-block;
+      margin: 0 0 0 0.25em;
+      &:first-child { margin-left: 0; }
+    }
+    
+    a:hover {
+      color: $orange;
+    }
+    
+    a:active {
+      color: darken($orange, 10%)
+    }
+
+  }
+  
+  .intro-callout {
+    h1 {
+      margin-bottom: 0;
+      font-size: 3em;
+      font-weight: 900;
+
+      @include media-ie($breakpoint-ipad) {
+        font-size: 4em;
+      }
+    }
+
+    h4 {
+      margin-bottom: 2em;
+    }
+
+  }
+  
+  .learn {
+    padding: 1em 2em;
+    font-size: 0.75em;
+    font-style: italic;
+    
+    a:hover {
+      color: $orange;
+    }
+    
+    a:active {
+      color: darken($orange, 10%);
+    }
+  
+  }
+
+}

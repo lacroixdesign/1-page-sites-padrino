@@ -1,0 +1,16 @@
+// Team Member
+.l-studio-team {
+  @include media-ie($breakpoint-ipad) {
+
+    .m-team-member {
+      @include span-columns(6);
+
+      .team-member-avatar {
+        @include span-columns(3);
+      }
+
+    }
+
+  }
+
+}

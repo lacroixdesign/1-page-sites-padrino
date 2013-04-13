@@ -1,0 +1,68 @@
+.m-studio {
+  padding: 2em 0;
+  background: $light-grey;
+  color: $dark-gray;
+  
+  a, a:visited {
+    color: $teal;
+  } 
+  
+  a:hover {
+    color: lighten($teal, 15%)
+  }
+  
+  a:active {
+    color: darken($teal, 15%)
+  }
+  
+  h5 {
+    font-family: $typeface-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5em;
+  }
+
+  @include media-ie($breakpoint-ipad) {
+
+    .studio-description {
+      @include span-columns(6);
+    }
+
+  }
+
+}
+
+
+// Team Member
+.m-team-member {
+
+  .team-member-info { 
+    margin: 2em 1em;
+
+    h6 {
+      font-family: $typeface-serif;
+      font-weight: 400;
+      font-size: 1em;
+    }
+
+    .team-member-title {
+      font-style: italic;
+      font-size: 0.625em;
+    }
+
+  }
+
+  .team-member-avatar {
+    width: 6em;
+    border: 4px solid $grey;
+    border-radius: 500px;
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: inherit;
+    }
+
+  }
+
+}

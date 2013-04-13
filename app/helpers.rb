@@ -1,7 +1,9 @@
 # Helper methods defined here can be accessed in any controller or view in the application
 
 OnePageSites::App.helpers do
-  # def simple_helper_method
-  #  ...
-  # end
+  # Display IcoMoon font icon
+  def icon key
+    "<i data-icon=&#x#{h(key)}></i>".html_safe
+  end
+
 end
