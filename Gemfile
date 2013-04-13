@@ -18,12 +18,9 @@ group :production do
 end
 
 group :development do
-  gem 'sprockets-helpers', require: 'sinatra/sprockets-helpers'
   gem 'uglifier'
   gem 'yui-compressor'
-  gem 'sass'
   gem 'coffee-script'
-  gem 'boarding_pass'
   gem 'pry'
   gem 'puma'
 end
@@ -34,6 +31,13 @@ group :test do
   gem 'rack-test', :require => 'rack/test'
 end
 
+# Assets
+gem 'sprockets-helpers', require: 'sinatra/sprockets-helpers'
+gem 'sprockets-sass', require: 'sprockets-sass'
+gem 'sass'
+gem 'boarding_pass'
+
 # Project requirements
 gem 'rake'
 gem 'haml'
+gem 'pry'

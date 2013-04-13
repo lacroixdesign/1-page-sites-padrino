@@ -21,7 +21,7 @@ sprockets.js_compressor = Uglifier.new(mangle: true)
 sprockets.css_compressor = YUI::CssCompressor.new
 
 Rake::SprocketsTask.new do |t|
-  manifest_path = File.join(Padrino.root,'public','assets')
+  manifest_path = File.join(Padrino.root,'public','assets','manifest.json')
   t.environment = sprockets
   t.output      = File.join(Padrino.root,'public','assets')
   t.manifest    = Sprockets::Manifest.new(sprockets, manifest_path)

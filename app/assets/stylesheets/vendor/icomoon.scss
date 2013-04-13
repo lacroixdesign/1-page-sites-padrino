@@ -1,9 +1,9 @@
 /*  IcoMoon -- Icon Font
 */
-
+@debug font-path('icomoon/icomoon');
 @include font-face(
   'icomoon',
-  asset-path('assets/icomoon/icomoon')
+  asset-path('icomoon/icomoon')
 );
 
 [data-icon]:before {

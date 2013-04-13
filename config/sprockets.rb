@@ -8,32 +8,28 @@ module Padrino::Sprockets
     end
 
     # base.set :digest_assets, true
-    base.set :digest_assets, false
- 
-    # compress file
-    # if PADRINO_ENV == 'development'
-    #   base.sprockets.js_compressor = Uglifier.new(mangle: true)
-    #   base.sprockets.css_compressor = YUI::CssCompressor.new
-    # end
+    base.set :digest_assets, true
  
     # sprockets-helpers
     base.helpers Sprockets::Helpers
     # We can configure `sprockets-helpers` to find the correct assets for us.
     Sprockets::Helpers.configure do |config|
-      manifest_path      = File.join(Padrino.root,'public','assets','manifest.json')
       config.environment = base.sprockets
       config.prefix      = '/assets'
-      config.manifest    = Sprockets::Manifest.new(base.sprockets, manifest_path)
-      # config.digest      = true
-      config.digest      = false
+      config.digest      = true
       config.public_path = base.public_folder
+
+      unless PADRINO_ENV == 'development'
+        manifest_path      = File.join(Padrino.root,'public','assets','manifest.json')
+        config.manifest    = Sprockets::Manifest.new(base.sprockets, manifest_path)
+      end
     end
  
     # call sprockets :D
     if PADRINO_ENV == 'development'
       base.get '/assets/*splat' do
-        env['PATH_INFO'].gsub!(%r{\A/?assets}, '')
-        settings.sprockets.call(env)
+        # env['PATH_INFO'].gsub!(%r{\A/?assets}, '')
+        # settings.sprockets.call(env)
       end
     end
   end
