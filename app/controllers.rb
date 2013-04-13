@@ -1,7 +1,7 @@
 OnePageSites::App.controllers  do
   
-  get :index do
-    # expires_in 60
+  get :index, cache: true do
+    expires_in 600
     render "static/index"
   end
 
@@ -23,6 +23,5 @@ OnePageSites::App.controllers  do
   # get '/example' do
   #   'Hello world!'
   # end
-  
 
 end

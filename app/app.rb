@@ -52,8 +52,8 @@ module OnePageSites
     ##
     # Caching support
     #
-    # register Padrino::Cache
-    # enable :caching
+    register Padrino::Cache
+    enable :caching if environment == :production
     #
     # You can customize caching store engines:
     #
@@ -61,7 +61,7 @@ module OnePageSites
     # set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
     # set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => '127.0.0.1', :port => 6379, :db => 0))
     # set :cache, Padrino::Cache::Store::Memory.new(50)
-    # set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache'))
+    set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache'))
     #
 
     ##
