@@ -34,9 +34,8 @@ module OnePageSites
 
       js :application, [
         '/javascripts/vendor/jquery-1.9.1.min.js',
-        '/javascripts/components/**/*.js'
-        # '/javascripts/vendor/**/*.js',
-        # '/javascripts/app/**/*.js'
+        '/javascripts/components/**/*.js',
+        '/javascripts/components/*.js'
       ]
       js :html5,     ['/javascripts/polyfills/html5shim.js']
       js :polyfills, ['/javascripts/polyfills/selectivizr.js']
@@ -61,7 +60,7 @@ module OnePageSites
     # set :cache, Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
     # set :cache, Padrino::Cache::Store::Redis.new(::Redis.new(:host => '127.0.0.1', :port => 6379, :db => 0))
     # set :cache, Padrino::Cache::Store::Memory.new(50)
-    # set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache')) # default choice
+    # set :cache, Padrino::Cache::Store::File.new(Padrino.root('tmp', app_name.to_s, 'cache'))
     #
 
     ##
