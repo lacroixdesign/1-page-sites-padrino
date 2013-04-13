@@ -1,6 +1,7 @@
 OnePageSites::App.controllers  do
   
   get :index do
+    # expires_in 60
     render "static/index"
   end
 
@@ -23,5 +24,4 @@ OnePageSites::App.controllers  do
   #   'Hello world!'
   # end
   
-
 end
