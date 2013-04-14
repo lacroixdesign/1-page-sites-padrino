@@ -28,10 +28,10 @@ module OnePageSites
     # Assets
     #
     assets do
-      serve '/javascripts', from: 'assets/javascripts' # Optional
-      serve '/stylesheets', from: 'assets/stylesheets' # Optional
-      serve '/images',      from: 'assets/images'      # Optional
-      serve '/fonts',       from: 'assets/fonts'       # Optional
+      serve '/javascripts', from: 'assets/javascripts'
+      serve '/stylesheets', from: 'assets/stylesheets'
+      serve '/images',      from: 'assets/images'
+      serve '/fonts',       from: 'assets/fonts'
 
       js :application, [
         '/javascripts/vendor/jquery-1.9.1.min.js',

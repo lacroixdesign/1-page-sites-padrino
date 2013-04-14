@@ -12,6 +12,7 @@
     display: inline-block;
     max-width: 20em;
     margin-bottom: 0.5em;
+    margin-right: 0.5em;
   }
 
   @include media-ie($breakpoint-desktop) {

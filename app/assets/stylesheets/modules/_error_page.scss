@@ -1,0 +1,19 @@
+.m-error-page {
+  max-width: 25em;
+  padding: 0 $page-gutter;
+  margin: 3em auto;
+  text-align: center;
+
+  h3 {
+    color: $teal;
+  }
+
+  p {
+    color: $dark-gray;
+  }
+
+  [class*="btn"] {
+    margin: 1em 0.5em;
+  }
+
+}
