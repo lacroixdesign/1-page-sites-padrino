@@ -86,7 +86,7 @@ section.m-studio
 
 
 / Get Started
-section#start.m-start
+section#start.m-start ng-controller="ProjectController"
   .l-constrained
 
     h1 How Do You Get Started
@@ -99,23 +99,44 @@ section#start.m-start
       li We will build a live working prototype of your site.
       li Once finalized, we will get your site live.
 
-    = form_for ProjectForm.new, "/start", class: "m-start-form", id: "project-form" do |f|
+    form.m-start-form ng-submit="submit()"
+
       .l-half
-        = f.label :name, caption: "Your name"
-        = f.text_field :name
-        = f.label :email, caption: "Email address"
-        = f.email_field :email
-        = f.label :phone, caption: "Phone number"
-        = f.telephone_field :phone
+        label Your name
+        input(type="text" ng-model="projectStarter.name" required)
+        label Email address
+        input(type="email" ng-model="projectStarter.email" required ng-pattern="validEmail")
+        label Phone number
+        input type="tel" ng-model="projectStarter.phone"
+
       .l-half
-        = f.label :overview, caption: "Give us a brief overview of your project"
-        = f.text_area :overview
+        label Give us a brief overview of your project
+        textarea ng-model="projectStarter.overview"
+
         .form-actions
           .start-form-response
             .start-form-success data-behavior="form:success"
               | Great! We'll be in touch with you soon.
             .start-form-errors data-behavior="form:errors"
-          = submit_tag "Submit", class: "btn"
+          input.btn type="submit" Submit
+
+    / = form_for ProjectForm.new, "/start", class: "m-start-form", id: "project-form" do |f|
+    /   .l-half
+    /     = f.label :name, caption: "Your name"
+    /     = f.text_field :name
+    /     = f.label :email, caption: "Email address"
+    /     = f.email_field :email
+    /     = f.label :phone, caption: "Phone number"
+    /     = f.telephone_field :phone
+    /   .l-half
+    /     = f.label :overview, caption: "Give us a brief overview of your project"
+    /     = f.text_area :overview
+    /     .form-actions
+    /       .start-form-response
+    /         .start-form-success data-behavior="form:success"
+    /           | Great! We'll be in touch with you soon.
+    /         .start-form-errors data-behavior="form:errors"
+    /       = submit_tag "Submit", class: "btn"
 
 
 / Sign Up

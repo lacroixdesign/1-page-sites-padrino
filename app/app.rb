@@ -39,6 +39,7 @@ module OnePageSites
 
       js :application, [
         '/javascripts/vendor/jquery-1.9.1.min.js',
+        '/javascripts/vendor/angular.js',
         '/javascripts/components/**/*.js',
         '/javascripts/components/*.js'
       ]
