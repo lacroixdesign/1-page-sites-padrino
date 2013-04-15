@@ -74,19 +74,19 @@ section.m-studio
       h5 = link_to "Take a look at what we have done.", "http://www.lacroixdesign.net/portfolio", target: "_blank"
     .l-studio-team
       .m-team-member
-        .team-member-avatar= image_tag "james.jpg"
+        .team-member-avatar = image_tag "james.jpg"
         .team-member-info
           h6 = link_to "James LaCroix", "http://www.lacroixdesign.net/team", target: "_blank"
           h6.team-member-title Designer &amp; Founder
       .m-team-member
-        .team-member-avatar= image_tag "michael.jpg"
+        .team-member-avatar = image_tag "michael.jpg"
         .team-member-info
           h6 = link_to "Michael LaCroix", "http://www.lacroixdesign.net/team", target: "_blank"
           h6.team-member-title Developer
 
 
 / Get Started
-section#start.m-start ng-controller="ProjectController"
+section#start.m-start
   .l-constrained
 
     h1 How Do You Get Started
@@ -99,26 +99,39 @@ section#start.m-start ng-controller="ProjectController"
       li We will build a live working prototype of your site.
       li Once finalized, we will get your site live.
 
-    form.m-start-form ng-submit="submit()"
+    div ng-app="starter-form"
+      form.m-start-form(ng-controller="ProjectController" name="projectStarter" ng-submit="submit()" novalidate)
 
-      .l-half
-        label Your name
-        input(type="text" ng-model="projectStarter.name" required)
-        label Email address
-        input(type="email" ng-model="projectStarter.email" required ng-pattern="validEmail")
-        label Phone number
-        input type="tel" ng-model="projectStarter.phone"
+        .l-half
+          .m-form-input
+            label Your name
+            input(type="text" name="name" ng-model="model.name" required)
+            .form-input-error ng-show="projectStarter.name.$dirty && projectStarter.name.$error.required" Required
 
-      .l-half
-        label Give us a brief overview of your project
-        textarea ng-model="projectStarter.overview"
+          .m-form-input
+            label Email address
+            input(type="text" name="email" ng-model="model.email" required ng-pattern="validEmail" ng-change="suggestEmail()")
+            / .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$invalid"
+            .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.required" Required
+            .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.pattern" Invalid email address
+            .form-input-suggestion ng-show="emailSuggestion"
+              a href="#email-suggestion" ng-click="useSuggestion($event)" Did you mean <strong>{{emailSuggestion}}</strong>?
 
-        .form-actions
-          .start-form-response
-            .start-form-success data-behavior="form:success"
-              | Great! We'll be in touch with you soon.
-            .start-form-errors data-behavior="form:errors"
-          input.btn type="submit" Submit
+          .m-form-input
+            label Phone number
+            input type="tel" ng-model="model.phone"
+
+        .l-half
+          .m-form-input
+            label Give us a brief overview of your project
+            textarea ng-model="model.overview"
+
+          .form-actions
+            .start-form-response
+              .start-form-success data-behavior="form:success"
+                | Great! We'll be in touch with you soon.
+              .start-form-errors data-behavior="form:errors"
+            input.btn type="submit" value="Submit"
 
     / = form_for ProjectForm.new, "/start", class: "m-start-form", id: "project-form" do |f|
     /   .l-half

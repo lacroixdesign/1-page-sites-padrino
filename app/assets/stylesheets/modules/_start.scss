@@ -93,14 +93,14 @@
     font-weight: bold;
   }
 
-  .start-form-success {
-    display: none;
+  .start-form-success,
+  .form-input-suggestion {
     color: lighten($green, 40);
   }
 
-  .start-form-errors {
-    display: none;
-    color: lighten($orange, 25);
+  .start-form-errors,
+  .form-input-error {
+    color: lighten($orange, 35);
   }
 
   @include media-ie($breakpoint-ipad) {

@@ -10,6 +10,25 @@ textarea {
   height: 5em;
 }
 
+.m-form-input {
+  margin-bottom: 1em;
+
+  .form-input-error,
+  .form-input-suggestion {
+    margin-top: 0.25em;
+  }
+
+  .form-input-error {
+    font-size: 85%;
+  }
+
+  .form-input-suggestion {
+    font-size: 90%;
+    font-style: italic;
+  }
+
+}
+
 .form-actions {
   @include clearfix;
 }
