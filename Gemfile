@@ -27,6 +27,8 @@ group :test do
   gem 'rack-test', :require => 'rack/test'
 end
 
+gem 'dotenv', :groups => [:development, :test], :require => 'dotenv'
+
 # Assets
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 gem 'uglifier'
@@ -38,6 +40,8 @@ gem 'boarding_pass'
 
 # Project requirements
 gem 'rake'
+gem 'sinatra-contrib'
 gem 'slim'
 gem 'pry'
 gem 'newrelic_rpm'
+gem 'active_attr'

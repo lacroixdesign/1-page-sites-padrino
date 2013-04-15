@@ -1,6 +1,11 @@
 - title ["500 Error"]
 
 .m-error-page
+
+  .error-page-logo = link_to image_tag("1pagesites-logo.png"), "/"
+
   h3 Oops! An error has occurred.
+
   p Try refreshing this page or returning to the home page.
+
   p = link_to "Return Home", "/", class: "btn-success"

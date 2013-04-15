@@ -1,6 +1,11 @@
 - title ["404 Error"]
 
 .m-error-page
+
+  .error-page-logo = link_to image_tag("1pagesites-logo.png"), "/"
+
   h3 Oops! We can't seem to find that page.
+
   p It may have been moved or might not exist.
+
   p = link_to "Return Home", "/", class: "btn-success"

@@ -10,7 +10,7 @@
 
     li {
       padding-bottom: 0.6875em;
-      border-bottom: 0.0625em dashed $white;
+      border-bottom: 1px dashed lighten($teal, 20);
     }
 
     li:last-child {

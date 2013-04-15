@@ -1,3 +1,7 @@
+.btn-standard {
+  @include btn($dark-gray, $white);
+}
+
 .btn-success {
   @include btn($green);
 }

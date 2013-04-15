@@ -1,5 +1,15 @@
+input[type="tel"],
 input[type="text"],
 input[type="email"],
 input[type="password"] {
   @include input;
+}
+
+textarea {
+  @include input;
+  height: 5em;
+}
+
+.form-actions {
+  @include clearfix;
 }

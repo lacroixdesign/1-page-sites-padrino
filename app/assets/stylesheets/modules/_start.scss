@@ -1,14 +1,37 @@
+// Get Started section
 .m-start {
   background: $green;
   padding: 2em 0;
-  
-  .start-steps {
-    counter-reset: getting-started-steps;
-    list-style: none;
-    margin-left: 0;
+
+  textarea,
+  input[type="tel"],
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    background: darken($green, 5);
+    color: lighten($green, 50);
+
+    &:focus {
+      box-shadow: none;
+    }
+
+  } // textarea, inputs
+
+  .btn {
+    @include btn(lighten($green, 50), $green);
   }
 
-  .start-steps li {
+} // .m-start
+
+// Get Started steps
+.m-start-steps {
+  @include row;
+  counter-reset: getting-started-steps;
+  list-style: none;
+  margin-left: 0;
+  border-bottom: 1px solid darken($green, 5);
+
+  li {
     position: relative;
     min-height: 3em;
     padding-top: 0.5em;
@@ -43,8 +66,45 @@
       &.old-ie-alpha {
         clear: left;
       }
-    }
 
+    } // @media-ie
+
+  } // li
+
+} // .start-steps
+
+// Get Started form
+.m-start-form {
+  @include row;
+  max-width: 25em;
+  margin: 1em auto;
+
+  textarea {
+    height: 12.5em;
   }
 
-}
+  [class*="btn"] {
+    float: right;
+  }
+
+  .start-form-response {
+    float: left;
+    font-size: 0.8125em;
+    font-weight: bold;
+  }
+
+  .start-form-success {
+    display: none;
+    color: lighten($green, 40);
+  }
+
+  .start-form-errors {
+    display: none;
+    color: lighten($orange, 25);
+  }
+
+  @include media-ie($breakpoint-ipad) {
+    max-width: 50em;
+  }
+
+} // .m-start-form

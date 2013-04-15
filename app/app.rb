@@ -1,3 +1,5 @@
+require 'sinatra/json'
+
 module OnePageSites
   class App < Padrino::Application
     register ScssInitializer
@@ -5,6 +7,8 @@ module OnePageSites
     register Padrino::Mailer
     register Padrino::Helpers
     register Sinatra::AssetPack
+
+    helpers Sinatra::JSON
 
     enable :sessions
 
