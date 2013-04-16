@@ -10,12 +10,14 @@ section.m-intro(data-resize="1100")
         li = link_to icon("e002"), "https://plus.google.com/b/100269766489074847704", rel: "publisher", target: "_blank"
         li = mail_to "hello@1pagesites.net", icon("e003")
     
-    .intro-callout
+    .m-callout
       h1 Get Your Business Moving
       h4 With a brand new responsive website launched in 3 weeks for $3000.
-      a.btn-success.large href="#start" Get Started
-      p.learn
-        a href="#about" or Learn More
+      .callout-actionables
+        a.btn-success.large href="#start" Get Started
+        a.learn href="#about"
+          .anchor or Learn More
+          .anchor = icon "e005"
 
 
 / About

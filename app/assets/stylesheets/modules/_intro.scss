@@ -1,3 +1,4 @@
+// Intro Section
 .m-intro {
   padding-bottom: 4em;
   background: $dark-gray image-url("cycle-bg.jpg") no-repeat center center;
@@ -45,37 +46,54 @@
     }
 
   }
-  
-  .intro-callout {
-    h1 {
-      margin-bottom: 0;
-      font-size: 3em;
-      font-weight: 900;
 
-      @include media-ie($breakpoint-ipad) {
-        font-size: 4em;
-      }
+} // .m-intro
+
+// Callout
+.m-callout {
+  @include clearfix;
+
+  h1 {
+    margin-bottom: 0;
+    font-size: 3em;
+    font-weight: 900;
+
+    @include media-ie($breakpoint-ipad) {
+      font-size: 4em;
     }
+  } // h1
 
-    h4 {
-      margin-bottom: 2em;
-    }
-
+  h4 {
+    margin-bottom: 2em;
   }
-  
+
+  .callout-actionables {
+    float: left;
+    text-align: center;
+  }
+
   .learn {
-    padding: 1em 2em;
+    display: block;
+    margin-top: 1em;
     font-size: 0.75em;
     font-style: italic;
+
+    .anchor {
+      margin-bottom: 0.25em;
+    }
+
+    i {
+      font-size: 1.5em;
+    }
     
-    a:hover {
+    &:hover {
+      color: lighten($orange, 10);
+    }
+    
+    &:active {
       color: $orange;
     }
-    
-    a:active {
-      color: darken($orange, 10%);
-    }
-  
-  }
+
+  } // .learn
 
 }

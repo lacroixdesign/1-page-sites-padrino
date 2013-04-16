@@ -40,8 +40,8 @@ module OnePageSites
 
       js :application, [
         '/javascripts/vendor/jquery-1.9.1.min.js',
-        '/javascripts/vendor/angular.js',
-        '/javascripts/vendor/mailcheck.js',
+        '/javascripts/vendor/angular.min.js',
+        '/javascripts/vendor/mailcheck.min.js',
         '/javascripts/lib/**/*.js',
         '/javascripts/lib/*.js',
         '/javascripts/components/**/*.js',
