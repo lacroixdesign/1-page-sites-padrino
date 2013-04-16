@@ -8,11 +8,33 @@
     text-align: center;
   }
 
+  input[type="text"],
   input[type="email"] {
     display: inline-block;
     max-width: 20em;
     margin-bottom: 0.5em;
     margin-right: 0.5em;
+  }
+
+  [class*="btn"] {
+    margin-bottom: 0.5em;
+  }
+
+  .form-input-error {
+    a { text-decoration: underline; }
+  }
+
+  .form-input-error,
+  .form-input-suggestion {
+    color: lighten($dark-gray, 20);
+    font-size: 75%;
+  }
+
+  .signup-form-response {
+    color: lighten($dark-gray, 10);
+    font-family: $typeface-serif;
+    font-weight: bold;
+    text-align: center;
   }
 
   @include media-ie($breakpoint-desktop) {

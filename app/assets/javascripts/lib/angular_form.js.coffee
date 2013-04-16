@@ -20,6 +20,7 @@ lacroixForms.factory "submitForm", ["$http", ($http) ->
       $scope.sent = true
     error = (data, status, headers, config) ->
       $scope.sending = false
+      $scope.responseError = data.message
     req = $http({method: "POST", url: url, data: data})
       .success(success)
       .error(error)

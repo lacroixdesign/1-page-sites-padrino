@@ -18,6 +18,18 @@ OnePageSites::App.controllers  do
     json @result
   end
 
+  # POST /newsletter
+  post :newsletter do
+    @subscription = NewsletterSubscribe.new params[:model]
+    @result = @subscription.submit
+    if @result[:success]
+      response.status = 200
+    else
+      response.status = 422
+    end
+    json @result
+  end
+
   # Errors
   get '404' do
     render "errors/404"

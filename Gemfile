@@ -45,4 +45,5 @@ gem 'slim'
 gem 'pry'
 gem 'newrelic_rpm'
 gem 'active_attr'
-gem 'wuparty'
+gem 'wuparty'  # Wufoo
+gem 'gibbon'   # MailChimp
