@@ -7,7 +7,7 @@ app = angular.module('starter-form', ['lacroix.forms'])
 ##
 # Project Starter Controller
 # 
-app.controller "ProjectController", ["$scope", "$element", "submitForm", "suggestEmail", "useSuggestion", ($scope, $element, submitForm, suggestEmail, useSuggestion) ->
+app.controller "ProjectController", ["$scope", "$element", "submitForm", "suggestEmail", "useSuggestion", "emailRegex", ($scope, $element, submitForm, suggestEmail, useSuggestion, emailRegex) ->
 
   $scope.submit = ->
     event.preventDefault()
@@ -17,7 +17,7 @@ app.controller "ProjectController", ["$scope", "$element", "submitForm", "sugges
       return false
     submitForm(event, $scope)
 
-  $scope.validEmail = /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/i
+  $scope.validEmail = emailRegex()
 
   $scope.suggestEmail = ->
     suggestEmail($scope)

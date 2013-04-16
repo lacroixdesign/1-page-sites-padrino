@@ -50,6 +50,14 @@ lacroixForms.factory "useSuggestion", ->
 
 
 ##
+# Email Regex
+# 
+lacroixForms.factory "emailRegex", ->
+  return ->
+    /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/i
+
+
+##
 # jQuery Show/Hide
 # 
 lacroixForms.directive "jqShow", ["$timeout", ($timeout) ->
