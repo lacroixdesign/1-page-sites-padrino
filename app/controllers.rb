@@ -7,7 +7,7 @@ OnePageSites::App.controllers  do
   end
 
   # POST /start
-  post :start do
+  post :start, csrf_protection: false do
     @project = ProjectForm.new params[:model]
     @result = @project.submit
     if @result[:success]
@@ -19,7 +19,7 @@ OnePageSites::App.controllers  do
   end
 
   # POST /newsletter
-  post :newsletter do
+  post :newsletter, csrf_protection: false do
     @subscription = NewsletterSubscribe.new params[:model]
     @result = @subscription.submit
     if @result[:success]

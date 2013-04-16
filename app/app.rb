@@ -12,6 +12,7 @@ module OnePageSites
 
     enable :sessions
 
+    set :allow_disabled_csrf, true
     set :root, File.dirname(__FILE__)
     # set :slim, layout: :"layouts/application"
 
