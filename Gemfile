@@ -32,7 +32,6 @@ gem 'dotenv', :groups => [:development, :test], :require => 'dotenv'
 # Assets
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 gem 'uglifier'
-gem 'yui-compressor'
 gem 'coffee-script'
 gem 'sass'
 gem 'compass'

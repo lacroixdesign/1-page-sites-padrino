@@ -53,7 +53,7 @@ module OnePageSites
         '/stylesheets/application.css'
       ]
 
-      js_compression  :yui, munge: true
+      js_compression  :uglify
       css_compression :sass
     end
 
