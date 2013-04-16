@@ -10,12 +10,11 @@ starterForm = angular.module('StarterForm', ['lacroix.forms'])
 starterForm.controller "ProjectController", ["$scope", "$element", "submitForm", "suggestEmail", "useSuggestion", "emailRegex", ($scope, $element, submitForm, suggestEmail, useSuggestion, emailRegex) ->
 
   $scope.submit = ->
-    event.preventDefault()
     if $scope.startForm.$invalid
       $scope.startForm.name.$dirty = true
       $scope.startForm.email.$dirty = true
       return false
-    submitForm(event, $scope)
+    submitForm("/start", $scope)
 
   $scope.validEmail = emailRegex()
 

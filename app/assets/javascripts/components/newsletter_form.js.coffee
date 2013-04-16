@@ -10,11 +10,10 @@ newsletterForm = angular.module 'NewsletterForm', ['lacroix.forms']
 newsletterForm.controller "NewsletterController", ["$scope", "$element", "submitForm", "suggestEmail", "useSuggestion", "emailRegex", ($scope, $element, submitForm, suggestEmail, useSuggestion, emailRegex) ->
 
   $scope.submit = ->
-    event.preventDefault()
     if $scope.newsletterForm.$invalid
       $scope.newsletterForm.email.$dirty = true
       return false
-    submitForm(event, $scope)
+    submitForm("/newsletter", $scope)
 
   $scope.validEmail = emailRegex()
 

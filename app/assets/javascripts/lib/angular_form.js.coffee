@@ -10,10 +10,8 @@ lacroixForms.config ["$httpProvider", ($httpProvider) ->
 # Submit Form
 # 
 lacroixForms.factory "submitForm", ["$http", ($http) ->
-  return (event, $scope) ->
+  return (url, $scope) ->
     $scope.sending = true
-    $form = $(event.target)
-    url   = $form.attr("action")
     data = $.param({ model: $scope.model })
 
     success = (data, status, headers, config) ->
