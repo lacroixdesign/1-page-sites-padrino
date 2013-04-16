@@ -7,6 +7,49 @@ lacroixForms.config ["$httpProvider", ($httpProvider) ->
 
 
 ##
+# Submit Form
+# 
+lacroixForms.factory "submitForm", ["$http", ($http) ->
+  return (event, $scope) ->
+    $scope.sending = true
+    $form = $(event.target)
+    url   = $form.attr("action")
+    data = $.param({ model: $scope.model })
+
+    success = (data, status, headers, config) ->
+      $scope.sent = true
+    error = (data, status, headers, config) ->
+      $scope.sending = false
+    req = $http({method: "POST", url: url, data: data})
+      .success(success)
+      .error(error)
+]
+
+
+##
+# Suggest Email
+# 
+lacroixForms.factory "suggestEmail", ->
+  return ($scope) ->
+    Kicksend.mailcheck.run
+      email: $scope.model.email
+      suggested: (suggestion) ->
+        $scope.emailSuggestion = suggestion.full
+      empty: ->
+        $scope.emailSuggestion = null
+
+
+##
+# Use Email Suggestion
+# 
+lacroixForms.factory "useSuggestion", ->
+  return ($scope) ->
+    if $scope.emailSuggestion?
+      $scope.model.email = $scope.emailSuggestion
+      $scope.emailSuggestion = null
+
+
+##
 # jQuery Show/Hide
 # 
 lacroixForms.directive "jqShow", ["$timeout", ($timeout) ->
