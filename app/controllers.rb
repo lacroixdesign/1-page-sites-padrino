@@ -8,18 +8,16 @@ OnePageSites::App.controllers  do
 
   # POST /start
   post :start do
-    project = ProjectForm.new params[:project_form]
-    puts "*** POST"
-    p params
-    tmpl = "<%= params %>"
-    erb tmpl
-  end
-
-  get :test, provides: [:json] do
-    # resp = { error: "404 Not Found" }.to_json
-    # render resp
-    response.status = 422
-    json message: "422 Validation Failed", errors: ""
+    @project = ProjectForm.new params[:model]
+    puts params[:model]
+    if @project.valid?
+      # POST to Wufoo
+      # Set response per Wufoo response
+    else
+      response = { message: "Validation Failed", errors: [@project.errors.messages] }
+    end
+    # pry @project
+    json response
   end
 
   # Errors

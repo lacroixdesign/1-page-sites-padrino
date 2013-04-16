@@ -3,6 +3,11 @@
 # 
 app = angular.module('starter-form', [])
 
+app.config ["$httpProvider", ($httpProvider) ->
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+  $httpProvider.defaults.headers.post['Content-Type']   = 'application/x-www-form-urlencoded'
+]
+
 
 ##
 # jQuery Show/Hide
@@ -52,11 +57,55 @@ app.directive "jqShow", ["$timeout", ($timeout) ->
 ##
 # Project Starter Controller
 # 
-@ProjectController = ["$scope", ($scope) ->
+@ProjectController = ["$scope", "$http", "$element", ($scope, $http, $element) ->
   $scope.submit = ->
+    event.preventDefault()
+    # data = $element.find('form').serialize()
+
+    $form = $(event.target)
+    url   = $form.attr("action")
+    data = $.param({ model: $scope.model })
+
+    # success = (data, status, req) ->
+    #   console?.log "SUCCESS"
+    #   console?.log data
+    #   console?.log status
+    #   console?.log req
+    #   # console?.log status
+    #   # console?.log headers()
+    #   # console?.log config
+    #   # $scope.sent = true
+
+    # error = (req, status, error) ->
+    #   console?.log "ERROR"
+    #   console?.log req
+    #   console?.log status
+    #   console?.log error
+    #   # console?.log status
+    #   # console?.log headers()
+    #   # console?.log config
+
+    success = (data, status, headers, config) ->
+      # console?.log "SUCCESS"
+      console?.log data
+      # console?.log status
+      # console?.log headers()
+      # console?.log config
+      # $scope.sent = true
+
+    error = (data, status, headers, config) ->
+      # console?.log "ERROR"
+      console?.log data
+      # console?.log status
+      # console?.log headers()
+      # console?.log config
+
+    # req = $http.post(url, data).success(success).error(error)
+    # data = angular.toJson(data)
+    req = $http({method: "POST", url: url, data: data}).success(success).error(error)
+    # req = $.post(url, data).done(success).fail(error)
+
     console?.log "Submitting..."
-    $scope.sent = true
-    # $scope.model = {}
 
   $scope.validEmail = /([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})/i
 

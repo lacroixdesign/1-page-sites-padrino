@@ -1,7 +1,6 @@
 div ng-app="starter-form" ng-controller="ProjectController"
   .m-start-form
-    / form(name="projectStarter" ng-submit="submit()" ng-hide="sent" novalidate)
-    form(name="projectStarter" ng-submit="submit()" jq-show="!sent" jq-options="{type: 'slide', duration: 500}" novalidate)
+    form(name="projectStarter" action="/start" ng-submit="submit()" jq-show="!sent" jq-options="{type: 'slide', duration: 500}" novalidate)
 
       .l-half
         .m-form-input
@@ -11,7 +10,7 @@ div ng-app="starter-form" ng-controller="ProjectController"
 
         .m-form-input
           label Email address
-          input(type="text" name="email" ng-model="model.email" required ng-pattern="validEmail" ng-change="suggestEmail()")
+          input(type="text" name="email" ng-model="model.email")
           .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.required" style="display: none;" Required
           .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.pattern" style="display: none;" Invalid email address
           .form-input-suggestion ng-show="emailSuggestion" style="display: none;"

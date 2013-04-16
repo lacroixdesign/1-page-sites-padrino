@@ -22,16 +22,16 @@ html lang="en"
     _  
     _  
     _
-  
+
   head
     meta charset="utf-8"
     title = [yield_content(:title), "1 Page Sites"].reject(&:blank?).join(' | ')
-    
+
     / koko wa general meta
     meta name="description" content="FIXME: APPLICATION DESCRIPTION"
     meta name="author" content="Michael LaCroix, James LaCroix"
     meta http-equiv="X-UA-Compatible" content="chrome=1"
-    
+
     / koko wa fav and touch icons (reside in the /public folder), plus iOS meta
     link rel="shortcut icon" href="/favicon.ico"
     link rel="apple-touch-icon" href="/apple-touch-icon-57x57-precomposed.png"
@@ -45,26 +45,28 @@ html lang="en"
     / koko wa HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       == js :html5
-    
+
     == css :application, media: 'all', type: 'text/css'
 
     / koko wa CSS3 polyfill, IE6-8 support of CSS3 pseudo-classes with Selectivizr
     /[if lt IE 9]
       == js :polyfills
-    
+
+    = csrf_meta_tags
+
     / koko wa Typekit
     script type="text/javascript" src="//use.typekit.net/wjd2qee.js"
     javascript:
       try{Typekit.load();}catch(e){}
-  
-  
+
+
   body
     = yield
 
-    
+
     / koko wa javascripts
     == js :application
-    
+
     - unless settings.development?
       / koko wa Google Analytics
       javascript:
@@ -92,7 +94,7 @@ html lang="en"
 
 
 
-    
+
     / koko wa Width Plugin
     - if settings.development?
       #lacroix-browserwidth style="position:fixed; bottom:0; left:0; background:#555; color:#CCC; font-size:0.75em; padding:0.25em; text-shadow: 0 -1px 1px rgba(0,0,0,0.9); font-weight:normal;"
