@@ -2,60 +2,31 @@
   padding: 2em 0;
   background: $light-grey;
   color: $dark-gray;
-  
-  a, a:visited {
-    color: $teal;
-  } 
-  
-  a:hover {
-    color: lighten($teal, 15%)
-  }
-  
-  a:active {
-    color: darken($teal, 15%)
-  }
-  
-  h5 {
-    font-family: $typeface-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1.5em;
+
+  .studio-description {
+    margin-bottom: 1.5em;
   }
 
   @include media-ie($breakpoint-ipad) {
 
+    .l-studio-team,
     .studio-description {
       @include span-columns(6);
     }
 
-  }
+  } // @media-ie
 
-}
+} // .m-studio
 
 
 // Team Member
 .m-team-member {
-
-  .team-member-info { 
-    margin: 2em 1em;
-
-    h6 {
-      font-family: $typeface-serif;
-      font-weight: 400;
-      font-size: 1em;
-    }
-
-    .team-member-title {
-      font-style: italic;
-      font-size: 0.625em;
-    }
-
-  }
+  @include row;
 
   .team-member-avatar {
-    width: 6em;
-    border: 4px solid $grey;
+    border: 5px solid $grey;
     border-radius: 500px;
+    @include transition (all 0.4s ease-in-out);
 
     img {
       display: block;
@@ -63,6 +34,33 @@
       border-radius: inherit;
     }
 
+  } // .team-member-avatar
+
+  .team-member-name {
+    font-family: $typeface-serif;
+    font-size: 1em;
+    font-weight: bold;
   }
 
-}
+  .team-member-title {
+    font-family: $typeface-serif;
+    font-size: 0.625em;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  a {
+    color: $dark-gray;
+    @include transition (all 0.4s ease-in-out);
+  }
+
+  a:hover {
+    color: darken($dark-gray, 15);
+
+    .team-member-avatar {
+      border-color: darken($grey, 10);
+    }
+
+  } // a:hover
+
+} // .m-team-member

@@ -1,11 +1,14 @@
-.btn-standard {
+a.btn-standard,
+button.btn-standard {
   @include btn($dark-gray, $white);
 }
 
-.btn-success {
+a.btn-success,
+button.btn-success {
   @include btn($green);
 }
 
-.btn-primary {
+a.btn-primary,
+button.btn-primary {
   @include btn($teal, $white);
 }

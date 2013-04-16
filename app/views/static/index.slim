@@ -68,21 +68,23 @@ section.m-details
 / Why Us
 section.m-studio
   .l-constrained
-    h1 Why You Should Choose Us
     .studio-description
+      h1 Why You Should Choose Us
       p Our studio was created to help businesses achieve their goals. For businesses both large and small, a website is an investment and it should yield your business a greater return. We don't just want to give you a spot on the web, we ultimately want to create the right site that helps to make your business grow. Since 2005, we have closely worked with our clients to learn about what they do so that we can create products that successfully engage and communicate with their audience effectively.
-      h5 = link_to "Take a look at what we have done.", "http://www.lacroixdesign.net/portfolio", target: "_blank"
+      p = link_to "Browse Our Portfolio", "http://www.lacroixdesign.net/portfolio", target: "_blank", class: "btn-primary"
     .l-studio-team
       .m-team-member
-        .team-member-avatar = image_tag "james.jpg"
-        .team-member-info
-          h6 = link_to "James LaCroix", "http://www.lacroixdesign.net/team", target: "_blank"
-          h6.team-member-title Designer &amp; Founder
+        = link_to "http://www.lacroixdesign.net/team", target: "_blank" do
+          .team-member-avatar = image_tag "james.jpg"
+          .team-member-info
+            h5.team-member-name James LaCroix
+            h6.team-member-title Designer &amp; Founder
       .m-team-member
-        .team-member-avatar = image_tag "michael.jpg"
-        .team-member-info
-          h6 = link_to "Michael LaCroix", "http://www.lacroixdesign.net/team", target: "_blank"
-          h6.team-member-title Developer
+        = link_to "http://www.lacroixdesign.net/team", target: "_blank" do
+          .team-member-avatar = image_tag "michael.jpg"
+          .team-member-info
+            h5.team-member-name Michael LaCroix
+            h6.team-member-title Developer
 
 
 / Get Started
