@@ -75,9 +75,12 @@
 
 // Get Started form
 .m-start-form {
-  @include row;
   max-width: 25em;
   margin: 1em auto;
+
+  form {
+    @include row;
+  }
 
   textarea {
     height: 12.5em;
@@ -87,20 +90,26 @@
     float: right;
   }
 
-  .start-form-response {
-    float: left;
-    font-size: 0.8125em;
-    font-weight: bold;
-  }
-
-  .start-form-success,
   .form-input-suggestion {
     color: lighten($green, 40);
   }
 
-  .start-form-errors,
   .form-input-error {
     color: lighten($orange, 35);
+  }
+
+  .start-form-email {
+    color: lighten($green, 40);
+    font-size: 0.75em;
+    font-style: italic;
+    text-align: right;
+  }
+
+  .start-form-response {
+    font-family: $typeface-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
   }
 
   @include media-ie($breakpoint-ipad) {

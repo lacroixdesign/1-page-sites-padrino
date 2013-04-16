@@ -27,5 +27,9 @@
     font-size: 1em;
   }
 
+  &:disabled {
+    background: darken($bg, 20);
+  }
+
   @content;
 }

@@ -99,57 +99,7 @@ section#start.m-start
       li We will build a live working prototype of your site.
       li Once finalized, we will get your site live.
 
-    div ng-app="starter-form"
-      form.m-start-form(ng-controller="ProjectController" name="projectStarter" ng-submit="submit()" novalidate)
-
-        .l-half
-          .m-form-input
-            label Your name
-            input(type="text" name="name" ng-model="model.name" required)
-            .form-input-error ng-show="projectStarter.name.$dirty && projectStarter.name.$error.required" Required
-
-          .m-form-input
-            label Email address
-            input(type="text" name="email" ng-model="model.email" required ng-pattern="validEmail" ng-change="suggestEmail()")
-            / .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$invalid"
-            .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.required" Required
-            .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.pattern" Invalid email address
-            .form-input-suggestion ng-show="emailSuggestion"
-              a href="#email-suggestion" ng-click="useSuggestion($event)" Did you mean <strong>{{emailSuggestion}}</strong>?
-
-          .m-form-input
-            label Phone number
-            input type="tel" ng-model="model.phone"
-
-        .l-half
-          .m-form-input
-            label Give us a brief overview of your project
-            textarea ng-model="model.overview"
-
-          .form-actions
-            .start-form-response
-              .start-form-success data-behavior="form:success"
-                | Great! We'll be in touch with you soon.
-              .start-form-errors data-behavior="form:errors"
-            input.btn type="submit" value="Submit"
-
-    / = form_for ProjectForm.new, "/start", class: "m-start-form", id: "project-form" do |f|
-    /   .l-half
-    /     = f.label :name, caption: "Your name"
-    /     = f.text_field :name
-    /     = f.label :email, caption: "Email address"
-    /     = f.email_field :email
-    /     = f.label :phone, caption: "Phone number"
-    /     = f.telephone_field :phone
-    /   .l-half
-    /     = f.label :overview, caption: "Give us a brief overview of your project"
-    /     = f.text_area :overview
-    /     .form-actions
-    /       .start-form-response
-    /         .start-form-success data-behavior="form:success"
-    /           | Great! We'll be in touch with you soon.
-    /         .start-form-errors data-behavior="form:errors"
-    /       = submit_tag "Submit", class: "btn"
+    = partial "static/start_form"
 
 
 / Sign Up
