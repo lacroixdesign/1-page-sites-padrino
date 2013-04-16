@@ -41,6 +41,8 @@ module OnePageSites
         '/javascripts/vendor/jquery-1.9.1.min.js',
         '/javascripts/vendor/angular.js',
         '/javascripts/vendor/mailcheck.js',
+        '/javascripts/lib/**/*.js',
+        '/javascripts/lib/*.js',
         '/javascripts/components/**/*.js',
         '/javascripts/components/*.js'
       ]
