@@ -42,6 +42,8 @@ module OnePageSites
         '/javascripts/vendor/jquery-1.9.1.min.js',
         '/javascripts/vendor/angular.min.js',
         '/javascripts/vendor/mailcheck.min.js',
+        '/javascripts/vendor/jquery.scrollTo.min.js',
+        '/javascripts/vendor/jquery.localScroll.min.js',
         '/javascripts/lib/**/*.js',
         '/javascripts/lib/*.js',
         '/javascripts/components/**/*.js',
