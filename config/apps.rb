@@ -26,7 +26,7 @@
 # override these settings in the subapps as needed.
 #
 Padrino.configure_apps do
-  # enable :sessions
+  enable :sessions
   set :session_secret, '4bea86ab7e24c49c2f1b89e3a239c245e9a53ef3bade43fa9032d727d99148be'
   set :protection, true
   set :protect_from_csrf, true

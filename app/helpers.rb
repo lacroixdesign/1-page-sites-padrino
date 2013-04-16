@@ -35,7 +35,11 @@ OnePageSites::App.helpers do
   # CSRF
   # 
   def csrf_meta_tags
-    meta_tag(session[:csrf], name: 'csrf-token')
+    if defined? session
+      csrf_token ||= (session[:csrf] ||= SecureRandom.hex(32))
+    end
+
+    meta_tag(csrf_token, name: 'csrf-token')
   end
 
 end
