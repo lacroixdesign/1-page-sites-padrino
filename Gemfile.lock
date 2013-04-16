@@ -44,6 +44,9 @@ GEM
     http_router (0.11.0)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.4)
     jsmin (1.0.1)
     kgio (2.8.0)
@@ -54,6 +57,8 @@ GEM
     method_source (0.8.1)
     mime-types (1.22)
     multi_json (1.7.2)
+    multi_xml (0.5.3)
+    multipart-post (1.2.0)
     neat (1.2.1)
       bourbon (>= 2.1)
       sass (>= 3.2)
@@ -147,6 +152,10 @@ GEM
       raindrops (~> 0.7)
     url_mount (0.2.1)
       rack
+    wuparty (1.2.4)
+      httparty (>= 0.6.1)
+      mime-types (>= 1.16)
+      multipart-post (>= 1.0.1)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -174,4 +183,5 @@ DEPENDENCIES
   slim
   uglifier
   unicorn
+  wuparty
   yui-compressor

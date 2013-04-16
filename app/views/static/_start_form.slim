@@ -10,7 +10,7 @@ div ng-app="starter-form" ng-controller="ProjectController"
 
         .m-form-input
           label Email address
-          input(type="text" name="email" ng-model="model.email")
+          input(type="text" name="email" ng-model="model.email" required ng-pattern="validEmail" ng-change="suggestEmail()")
           .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.required" style="display: none;" Required
           .form-input-error ng-show="projectStarter.email.$dirty && projectStarter.email.$error.pattern" style="display: none;" Invalid email address
           .form-input-suggestion ng-show="emailSuggestion" style="display: none;"
@@ -26,7 +26,8 @@ div ng-app="starter-form" ng-controller="ProjectController"
           textarea ng-model="model.overview"
 
         .form-actions
-          button.btn type="submit" ng-disabled="projectStarter.$invalid || !projectStarter.$dirty" Submit
+          / button.btn type="submit" ng-disabled="projectStarter.$invalid || !projectStarter.$dirty || sending" Submit
+          button.btn type="submit" ng-disabled="sending" Submit
 
     .start-form-email jq-show="!sent" jq-options="{type: 'slide'}" Have Questions? Email us at #{mail_to 'Hello@1PageSites.net', 'Hello@1PageSites.net'}
 

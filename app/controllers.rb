@@ -9,15 +9,13 @@ OnePageSites::App.controllers  do
   # POST /start
   post :start do
     @project = ProjectForm.new params[:model]
-    puts params[:model]
-    if @project.valid?
-      # POST to Wufoo
-      # Set response per Wufoo response
+    @result = @project.submit
+    if @result[:success]
+      response.status = 200
     else
-      response = { message: "Validation Failed", errors: [@project.errors.messages] }
+      response.status = 422
     end
-    # pry @project
-    json response
+    json @result
   end
 
   # Errors
